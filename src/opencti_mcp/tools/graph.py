@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Annotated
 
-from mcp.server.mcpserver import MCPServer
+from mcp.server import MCPServer
 from pydantic import Field
 
 from opencti_mcp.core.common import execute
