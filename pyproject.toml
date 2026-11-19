@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "opencti-mcp"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "mcp>=2.0,<3.0",
+    "pycti==7.260902.0",
+    "pydantic>=2.7,<3.0",
+    "python-dotenv>=1.0,<2.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+opencti-mcp = "opencti_mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/opencti_mcp"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
